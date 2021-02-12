@@ -1559,8 +1559,8 @@
       </entry>
       <entry value="245" name="MAV_CMD_PREFLIGHT_STORAGE" hasLocation="false" isDestination="false">
         <description>Request storage of different parameter values and logs. This command will be only accepted if in pre-flight mode.</description>
-        <param index="1" label="Parameter Storage" minValue="0" maxValue="3" increment="1">Parameter storage: 0: READ FROM FLASH/EEPROM, 1: WRITE CURRENT TO FLASH/EEPROM, 2: Reset to defaults, 3: Reset sensors to factory calibration (or default if not available)</param>
-        <param index="2" label="Mission Storage" minValue="0" maxValue="2" increment="1">Mission storage: 0: READ FROM FLASH/EEPROM, 1: WRITE CURRENT TO FLASH/EEPROM, 2: Reset to defaults</param>
+        <param index="1" label="Parameter Storage" enum="MAV_STORAGE_ACTION">Parameter storage action</param>
+        <param index="2" label="Mission Storage" enum="MAV_STORAGE_ACTION">Mission storage action</param>
         <param index="3" label="Logging Rate" units="Hz" minValue="-1" increment="1">Onboard logging: 0: Ignore, 1: Start default rate logging, -1: Stop logging, &gt; 1: logging rate (e.g. set to 1000 for 1000 Hz logging)</param>
         <param index="4">Reserved</param>
         <param index="5">Empty</param>
@@ -4283,6 +4283,24 @@
       <entry value="5" name="MAG_CAL_FAILED"/>
       <entry value="6" name="MAG_CAL_BAD_ORIENTATION"/>
       <entry value="7" name="MAG_CAL_BAD_RADIUS"/>
+    </enum>
+    <enum name="MAV_STORAGE_ACTION">
+      <description>Storage action.</description>
+      <entry value="-1" name="MAV_STORAGE_ACTION_NOTHING">
+        <description>Do nothing.</description>
+      </entry>
+      <entry value="0" name="MAV_STORAGE_ACTION_READ">
+        <description>Read from FLASH/EEPROM.</description>
+      </entry>
+      <entry value="1" name="MAV_STORAGE_ACTION_WRITE">
+        <description>Write current values to FLASH/EEPROM</description>
+      </entry>
+      <entry value="2" name="MAV_STORAGE_ACTION_RESET">
+        <description>Reset to defaults</description>
+      </entry>
+      <entry value="3" name="MAV_STORAGE_ACTION_RESET_SENSOR_FACTORY">
+        <description>Reset sensors to factory calibration (or default if not available)</description>
+      </entry>
     </enum>
   </enums>
   <messages>
