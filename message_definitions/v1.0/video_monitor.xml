@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<mavlink>
+    <include>common.xml</include>
+    <dialect>4</dialect>
+
+    <messages>
+        <message id="369" name="VIDEO_MONITOR">
+        <description>This message send the number of peoples descovered! NavQ => FMU => GroundStation</description>
+        <field type="uint64_t" name="timestamp">time since system start (microseconds)</field>      
+        <field type="int32_t" name="lat" units="degE7">Latitude WGS84 (deg * 1E7). If unknown set to INT32_MAX</field>
+        <field type="int32_t" name="lon" units="degE7">Longitude WGS84 (deg * 1E7). If unknown set to INT32_MAX</field>
+        <field type="int32_t" name="alt" units="degE7"></field>
+        <field type="int32_t" name="alt_ellipsoid" units="degE7"></field>
+        
+        
+        
+        
+        <field type="uint16_t" name="no_people">number of identified peoples</field>
+        <field type="float" name="confidence">I'n not sure for what to using it</field>
+        </message>
+    </messages>
+</mavlink>

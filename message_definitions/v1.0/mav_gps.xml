@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<mavlink>
+    <include>common.xml</include>
+    <dialect>4</dialect>
+
+    <messages>
+        <message id="1311" name="MAV_GPS">
+        <description>This message send the number of peoples descovered! NavQ => FMU => GroundStation</description>
+        <field type="uint64_t" name="timestamp">time since system start (microseconds)</field>        
+        <field type="int32_t" name="lat" units="degE7">Latitude WGS84 (deg * 1E7). If unknown set to INT32_MAX</field>
+        <field type="int32_t" name="lon" units="degE7">Longitude WGS84 (deg * 1E7). If unknown set to INT32_MAX</field>
+        <field type="int32_t" name="alt" units="degE7"></field>
+        <field type="int32_t" name="alt_ellipsoid" units="degE7"></field>
+        <field type="float" name="s_variance_m_s" ></field>
+        <field type="float" name="c_variance_rad" ></field>
+        <field type="uint8_t" name="fix_type" ></field>
+        <field type="float" name="eph" ></field>
+        <field type="float" name="epv" ></field>
+        <field type="float" name="hdop" ></field>
+        <field type="float" name="vdop" ></field>
+        <field type="int32_t" name="noise_per_ms" ></field>
+        <field type="int32_t" name="jamming_indicator" ></field>
+        <field type="uint8_t" name="jamming_state" ></field>
+        <field type="float" name="vel_m_s" ></field>
+        <field type="float" name="vel_n_m_s" ></field>
+        <field type="float" name="vel_e_m_s" ></field>
+        <field type="float" name="vel_d_m_s" ></field>
+        <field type="float" name="cog_rad" ></field>
+        <field type="uint8_t" name="vel_ned_valid" ></field>
+        <field type="int32_t" name="timestamp_time_relative" ></field>
+        <field type="uint64_t" name="time_utc_usec" ></field>
+        <field type="uint8_t" name="satellites_used" ></field>
+        <field type="float" name="heading" ></field>
+        <field type="float" name="heading_offset" ></field>
+        
+        </message>
+    </messages>
+</mavlink>
