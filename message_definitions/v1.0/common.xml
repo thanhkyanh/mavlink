@@ -6323,6 +6323,14 @@
       <field type="float[4]" name="voltage" units="V">Voltage measured from each ESC.</field>
       <field type="float[4]" name="current" units="A">Current measured from each ESC.</field>
     </message>
+    <message id="295" name="AIRSPEED_RAW">
+      <description>Airspeed information from a sensor.</description>
+      <field type="uint8_t" name="id" instance="true">Sensor ID.</field>
+      <field type="float" name="airspeed" units="m/s">Indicated airspeed (IAS).</field>
+      <field type="int16_t" name="temperature" units="cdegC">Temperature. INT16_MAX for unknown temperature.</field>
+      <field type="float" name="press_diff" units="hPa">Differential pressure. NaN for unknown differential pressure.</field>
+      <field type="float" name="press_static" units="hPa">Static pressure. NaN for unknown differential pressure.</field>
+    </message>
     <message id="299" name="WIFI_CONFIG_AP">
       <description>Configure WiFi AP SSID, password, and mode. This message is re-emitted as an acknowledgement by the AP. The message may also be explicitly requested using MAV_CMD_REQUEST_MESSAGE</description>
       <field type="char[32]" name="ssid">Name of Wi-Fi network (SSID). Blank to leave it unchanged when setting. Current SSID when sent back as a response.</field>
