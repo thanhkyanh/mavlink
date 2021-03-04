@@ -13,3 +13,7 @@ Key Links:
 * [Discussion/Support](https://mavlink.io/en/#support) (Slack)
 * [Contributing](https://mavlink.io/en/contributing/contributing.html)
 * [License](https://mavlink.io/en/#license)
+
+## Change to MAV20
+change mavgen.py in pymavlink/generator
+DEFAULT_WIRE_PROTOCOL = mavparse.PROTOCOL_2_0
